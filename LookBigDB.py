@@ -16,7 +16,7 @@ mode_write = 'w'
 for chunk in pd.read_csv(FILES_NAME['file_data'], chunksize=CHUNK_SIZE,
                          header=None, names=['a', 'b']):
 
-    print('viewed ', i * CHUNK_SIZE,chunk.l, end='')
+    print('viewed ', i * CHUNK_SIZE, end='')
     records_found = chunk[chunk['b'].isin(verification_list)]
     if records_found.empty:
         print(' no matches')
