@@ -1,8 +1,8 @@
 import pandas as pd
 
-FILES_NAME = {'file_prefix': f'bandwidth.csv',
-              'file_data':   f'sample_big.csv',
-              'file_result': f'out.csv'}
+FILES_NAME = {'file_prefix': f'BigData/bandwidth.csv',
+              'file_data':   f'BigData/sample_big.csv',
+              'file_result': f'BigData/result.csv'}
 
 CHUNK_SIZE = 10 # Need to change 10 to 1000000 or 10000000
 
