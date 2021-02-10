@@ -14,9 +14,7 @@ URL_START = 'https://lk.waviot.ru/?device=summary'
 
 def date_varible():
  t = datetime.datetime.now()
- #if t.hour > 20:
-  #t = datetime.datetime.fromordinal(t.toordinal() + 1)
- d_plus = 1 * 24 * 60 * 60
+ d_plus = 86400 # 1 * 24 * 60 * 60
 
  t_to = int(t.replace(t.year, t.month, t.day, 0, 0, 0, 0).timestamp() - d_plus)
  if t.month > 1:
@@ -24,9 +22,7 @@ def date_varible():
  else:
   t_from = int(t.replace(t.year - 1, 12, t.day, 0, 0, 0, 0).timestamp() - d_plus)
 
-
- s = str(t.strftime('%Y_%m_%d')+'_Electric.xlsx')
- return s, t_from ,t_to
+ return str(t.strftime('%Y_%m_%d')+'_Electric.xlsx'), t_from ,t_to
 
 def network_sesion(file_n, t_from, t_to):
 
@@ -59,7 +55,7 @@ def network_sesion(file_n, t_from, t_to):
   print("Скачевание архива не возможно ", e)
   return False
 
- #сохранием фаил
+ #сохраняем в фаил
  try:
   f = open(file_n,'wb')
   f.write(htm.content)
